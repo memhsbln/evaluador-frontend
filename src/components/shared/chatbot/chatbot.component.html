@@ -1,0 +1,23 @@
+<div class="chatbot-container">
+    <div class="chat-window" *ngIf="isOpen">
+        <div class="chat-header">
+            <h3>Asistente IA</h3>
+            <button class="close-btn" (click)="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" #scrollContainer>
+            <div class="message" *ngFor="let msg of messages"
+                [ngClass]="{'user-msg': msg.sender === 'user', 'bot-msg': msg.sender === 'bot'}">
+                <div class="message-content">{{ msg.text }}</div>
+            </div>
+            <div *ngIf="isLoading" class="loading-spinner">Escribiendo...</div>
+        </div>
+        <div class="chat-input">
+            <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Escribe tu mensaje..."
+                [disabled]="isLoading">
+            <button (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">Enviar</button>
+        </div>
+    </div>
+    <button class="chat-toggle-btn" *ngIf="!isOpen" (click)="toggleChat()">
+        💬
+    </button>
+</div>
