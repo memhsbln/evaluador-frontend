@@ -43,3 +43,8 @@ Thumbs.db
 
 # Local Secrets
 secrets.yaml
+
+
+
+.nx/cache
+.nx/workspace-data

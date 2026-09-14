@@ -6,8 +6,12 @@
         </div>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="name">Nombre Completo</label>
+                <label for="name">Nombre(s)</label>
                 <input type="text" id="name" formControlName="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Apellido(s)</label>
+                <input type="text" id="lastName" formControlName="lastName" placeholder="Tu apellido" required>
             </div>
             <div class="form-group">
                 <label for="username">Nombre de Usuario</label>
@@ -26,7 +30,7 @@
                 <input type="password" id="confirm-password" formControlName="confirmPassword"
                     placeholder="Repite tu contraseña" required>
             </div>
-            <button type="submit" class="cta-button full-width" [disabled]="registerForm.invalid">Registrarse</button>
+            <button type="submit" class="cta-button full-width">Registrarse</button>
         </form>
         <div class="card-footer">
             <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia Sesión</a></p>

@@ -3,8 +3,7 @@ import { ChatService } from '../../../app/services/chat.service';
 
 @Component({
     selector: 'app-chatbot',
-    templateUrl: './chatbot.component.html',
-    styleUrls: ['./chatbot.component.css']
+    templateUrl: './chatbot.component.html'
 })
 export class ChatbotComponent implements AfterViewChecked {
     @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
